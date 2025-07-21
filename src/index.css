@@ -8,58 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Sports betting premium dark theme */
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    /* BETMGM premium dark theme */
+    --background: 220 20% 6%;
+    --foreground: 45 100% 95%;
 
-    --card: 225 25% 16%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 15% 8%;
+    --card-foreground: 45 100% 95%;
 
-    --popover: 225 25% 16%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 45 100% 95%;
 
-    --primary: 160 84% 39%;
-    --primary-foreground: 220 14% 11%;
+    --primary: 45 100% 65%;
+    --primary-foreground: 220 20% 6%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25% 12%;
+    --secondary-foreground: 45 100% 95%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 43 96% 56%;
-    --accent-foreground: 220 14% 11%;
+    --accent: 45 100% 65%;
+    --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 45 100% 95%;
 
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 160 84% 39%;
+    --border: 215 25% 15%;
+    --input: 215 25% 15%;
+    --ring: 45 100% 65%;
 
-    /* Custom betting theme colors */
+    /* BETMGM custom theme colors */
     --success: 142 76% 36%;
-    --success-foreground: 210 40% 98%;
+    --success-foreground: 45 100% 95%;
     
-    --warning: 43 96% 56%;
-    --warning-foreground: 220 14% 11%;
+    --warning: 45 100% 65%;
+    --warning-foreground: 220 20% 6%;
     
     --info: 217 91% 60%;
-    --info-foreground: 210 40% 98%;
+    --info-foreground: 45 100% 95%;
     
-    --odds: 25 95% 53%;
-    --odds-foreground: 220 14% 11%;
+    --odds: 45 100% 65%;
+    --odds-foreground: 220 20% 6%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 45%));
-    --gradient-card: linear-gradient(135deg, hsl(225 25% 16%), hsl(225 25% 18%));
-    --gradient-accent: linear-gradient(135deg, hsl(43 96% 56%), hsl(43 96% 62%));
+    /* BETMGM Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 65%), hsl(45 100% 75%));
+    --gradient-card: linear-gradient(135deg, hsl(220 15% 8%), hsl(220 15% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 100% 65%), hsl(45 100% 75%));
     --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 42%));
+    --gradient-betmgm: linear-gradient(135deg, hsl(220 20% 6%), hsl(215 25% 12%));
 
-    /* Shadows */
-    --shadow-card: 0 4px 20px -2px hsl(220 14% 8% / 0.3);
-    --shadow-primary: 0 8px 30px -6px hsl(160 84% 39% / 0.4);
-    --shadow-accent: 0 8px 30px -6px hsl(43 96% 56% / 0.3);
+    /* BETMGM Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(220 20% 4% / 0.5);
+    --shadow-primary: 0 8px 30px -6px hsl(45 100% 65% / 0.3);
+    --shadow-accent: 0 8px 30px -6px hsl(45 100% 65% / 0.25);
 
     --radius: 0.75rem;
 
