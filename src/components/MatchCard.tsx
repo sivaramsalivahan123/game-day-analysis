@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { TrendingUp, TrendingDown, Cloud, Sun, CloudRain, Users, DollarSign, Clock } from "lucide-react";
+import { TrendingUp, TrendingDown, Cloud, Sun, CloudRain, Users, DollarSign, Clock, History } from "lucide-react";
 import { analyzeMatch } from "@/lib/ai-analysis";
 import { useState, useEffect } from "react";
 
@@ -49,6 +49,7 @@ interface MatchCardProps {
   match: Match;
   showAnalysis: boolean;
   onBetClick: (matchId: number) => void;
+  onHistoryClick?: (matchId: number) => void;
 }
 
 const statusColors = {
@@ -89,7 +90,7 @@ const getAnalysisMessage = (match: Match) => {
   }
 };
 
-export function MatchCard({ match, showAnalysis, onBetClick }: MatchCardProps) {
+export function MatchCard({ match, showAnalysis, onBetClick, onHistoryClick }: MatchCardProps) {
   const [aiAnalysis, setAiAnalysis] = useState<string>("");
   const [isLoadingAI, setIsLoadingAI] = useState(false);
   const WeatherIcon = weatherIcons[match.weather];
@@ -209,16 +210,28 @@ export function MatchCard({ match, showAnalysis, onBetClick }: MatchCardProps) {
           </div>
         )}
 
-        {!match.optedIn && (
+        <div className="flex gap-2">
           <Button 
-            variant="bet" 
-            className="w-full" 
-            onClick={() => onBetClick(match.id)}
+            variant="outline" 
+            size="sm"
+            onClick={() => onHistoryClick?.(match.id)}
+            className="flex-1"
           >
-            <TrendingUp className="h-4 w-4" />
-            Place Bet ({match.odds}x)
+            <History className="h-4 w-4" />
+            View History
           </Button>
-        )}
+          
+          {!match.optedIn && (
+            <Button 
+              variant="bet" 
+              className="flex-1" 
+              onClick={() => onBetClick(match.id)}
+            >
+              <TrendingUp className="h-4 w-4" />
+              Place Bet ({match.odds}x)
+            </Button>
+          )}
+        </div>
       </CardContent>
     </Card>
   );

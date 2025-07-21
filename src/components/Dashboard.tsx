@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MatchCard, type Match } from "./MatchCard";
-import { MatchHistory } from "./MatchHistory";
 import { BarChart3, TrendingUp, DollarSign, Target, Users, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { analyzeMatch } from "@/lib/ai-analysis";
@@ -361,6 +360,14 @@ export function Dashboard() {
     });
   };
 
+  const handleHistoryClick = (matchId: number) => {
+    const match = mockMatches.find(m => m.id === matchId);
+    toast({
+      title: "Match History",
+      description: `Viewing history for ${match?.playerA} vs ${match?.playerB}`,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* BETMGM Logo Background */}
@@ -452,9 +459,6 @@ export function Dashboard() {
           </Card>
         </div>
 
-        {/* Match History */}
-        <MatchHistory />
-
         {/* Your Active Bets */}
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-6">
@@ -472,6 +476,7 @@ export function Dashboard() {
                 match={match}
                 showAnalysis={showAnalysis}
                 onBetClick={handleBetClick}
+                onHistoryClick={handleHistoryClick}
               />
             ))}
           </div>
@@ -494,6 +499,7 @@ export function Dashboard() {
                 match={match}
                 showAnalysis={showAnalysis}
                 onBetClick={handleBetClick}
+                onHistoryClick={handleHistoryClick}
               />
             ))}
           </div>
