@@ -2,6 +2,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, Cloud, Sun, CloudRain, Users, DollarSign, Clock } from "lucide-react";
+import { analyzeMatch } from "@/lib/ai-analysis";
+import { useState, useEffect } from "react";
 
 export interface Match {
   id: number;
@@ -64,7 +66,22 @@ const getAnalysisMessage = (match: Match) => {
 };
 
 export function MatchCard({ match, showAnalysis, onBetClick }: MatchCardProps) {
+  const [aiAnalysis, setAiAnalysis] = useState<string>("");
+  const [isLoadingAI, setIsLoadingAI] = useState(false);
   const WeatherIcon = weatherIcons[match.weather];
+
+  useEffect(() => {
+    if (showAnalysis) {
+      setIsLoadingAI(true);
+      analyzeMatch(match).then((analysis) => {
+        setAiAnalysis(analysis);
+        setIsLoadingAI(false);
+      }).catch(() => {
+        setAiAnalysis(getAnalysisMessage(match));
+        setIsLoadingAI(false);
+      });
+    }
+  }, [showAnalysis, match]);
   
   return (
     <Card className={`
@@ -155,9 +172,16 @@ export function MatchCard({ match, showAnalysis, onBetClick }: MatchCardProps) {
               : 'bg-accent/10 border-l-accent text-accent-foreground'
             }
           `}>
-            <p className="text-sm font-medium leading-relaxed">
-              {getAnalysisMessage(match)}
-            </p>
+            {isLoadingAI ? (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                AI analyzing match data...
+              </div>
+            ) : (
+              <p className="text-sm font-medium leading-relaxed">
+                {aiAnalysis || getAnalysisMessage(match)}
+              </p>
+            )}
           </div>
         )}
 
