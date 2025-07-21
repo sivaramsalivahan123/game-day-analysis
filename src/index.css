@@ -8,35 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Sports betting premium dark theme */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 225 25% 16%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 225 25% 16%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 220 14% 11%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 14% 11%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 160 84% 39%;
 
-    --radius: 0.5rem;
+    /* Custom betting theme colors */
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 43 96% 56%;
+    --warning-foreground: 220 14% 11%;
+    
+    --info: 217 91% 60%;
+    --info-foreground: 210 40% 98%;
+    
+    --odds: 25 95% 53%;
+    --odds-foreground: 220 14% 11%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 45%));
+    --gradient-card: linear-gradient(135deg, hsl(225 25% 16%), hsl(225 25% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(43 96% 56%), hsl(43 96% 62%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 42%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(220 14% 8% / 0.3);
+    --shadow-primary: 0 8px 30px -6px hsl(160 84% 39% / 0.4);
+    --shadow-accent: 0 8px 30px -6px hsl(43 96% 56% / 0.3);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
