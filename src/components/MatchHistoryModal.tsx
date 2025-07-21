@@ -118,15 +118,6 @@ export function MatchHistoryModal({ isOpen, onClose, playerName, opponentName, s
               <div className="text-xs text-muted-foreground">Draws</div>
             </CardContent>
           </Card>
-          
-          <Card className="bg-gradient-card">
-            <CardContent className="p-4 text-center">
-              <div className={`text-2xl font-bold ${netProfit >= 0 ? 'text-success' : 'text-destructive'}`}>
-                {netProfit >= 0 ? '+' : ''}${netProfit}
-              </div>
-              <div className="text-xs text-muted-foreground">Net P&L</div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Match History List */}
@@ -167,21 +158,6 @@ export function MatchHistoryModal({ isOpen, onClose, playerName, opponentName, s
                         </div>
                       </div>
                     </div>
-                    
-                    {match.betAmount && (
-                      <div className="text-right">
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-                          <Target className="h-3 w-3" />
-                          <span>Bet: ${match.betAmount} @ {match.odds}x</span>
-                        </div>
-                        <div className={`text-sm font-bold ${
-                          match.result === 'win' ? 'text-success' : 
-                          match.result === 'loss' ? 'text-destructive' : 'text-warning'
-                        }`}>
-                          Payout: ${match.payout}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </CardContent>
               </Card>

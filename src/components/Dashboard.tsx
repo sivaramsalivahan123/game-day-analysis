@@ -383,7 +383,8 @@ export function Dashboard() {
         style={{
           backgroundImage: `url(${betmgmLogo})`,
           backgroundSize: '40%',
-          backgroundPosition: 'center center'
+          backgroundPosition: 'center center',
+          position: "fixed"
         }}
       />
       {/* Header */}
@@ -392,10 +393,18 @@ export function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                Sports Betting Dashboard
+                BetMGM Betting Dashboard
               </h1>
               <p className="text-muted-foreground">Your personalized betting insights</p>
             </div>
+            <div 
+        className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-100 pointer-events-none"
+        style={{
+          backgroundImage: `url(${betmgmLogo})`,
+          backgroundSize: '18%',
+          backgroundPosition: 'center center'
+        }}
+      />
             <Button 
               variant="analyze" 
               size="lg" 

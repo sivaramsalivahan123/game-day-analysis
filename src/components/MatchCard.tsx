@@ -112,7 +112,7 @@ export function MatchCard({ match, showAnalysis, onBetClick, onHistoryClick }: M
     <Card className={`
       bg-gradient-card shadow-card hover:shadow-primary transition-all duration-300 hover:scale-[1.02] 
       border-border hover:border-primary/40 overflow-hidden relative group animate-fade-in
-      ${match.optedIn ? 'ring-1 ring-primary/20' : ''}
+      ${match.optedIn ? '/20' : ''}
     `}>
       {match.optedIn && (
         <div className="absolute top-0 right-0 bg-gradient-primary text-primary-foreground px-3 py-1 text-xs font-medium">
@@ -120,7 +120,12 @@ export function MatchCard({ match, showAnalysis, onBetClick, onHistoryClick }: M
         </div>
       )}
       
-      <CardHeader className="pb-3">
+      {match.winProbability && match.winProbability > 75 && (
+  <div className="absolute top-0 left-0 bg-accent text-accent-foreground px-3 py-1 text-xs font-medium z-10 rounded-br-md">
+    High Win Probability
+  </div>
+)}
+  <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Badge variant="outline" className="bg-muted/50">
