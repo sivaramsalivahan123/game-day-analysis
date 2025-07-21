@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MatchCard, type Match } from "./MatchCard";
+import { MatchHistory } from "./MatchHistory";
 import { BarChart3, TrendingUp, DollarSign, Target, Users, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { analyzeMatch } from "@/lib/ai-analysis";
@@ -450,6 +451,9 @@ export function Dashboard() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Match History */}
+        <MatchHistory />
 
         {/* Your Active Bets */}
         <section className="mb-12">
