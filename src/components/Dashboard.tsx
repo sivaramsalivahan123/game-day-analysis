@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MatchCard, type Match } from "./MatchCard";
+import { MatchHistoryModal } from "./MatchHistoryModal";
 import { BarChart3, TrendingUp, DollarSign, Target, Users, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { analyzeMatch } from "@/lib/ai-analysis";
@@ -320,6 +321,10 @@ const mockMatches: Match[] = [
 export function Dashboard() {
   const [showAnalysis, setShowAnalysis] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [historyModal, setHistoryModal] = useState<{
+    isOpen: boolean;
+    matchId: number | null;
+  }>({ isOpen: false, matchId: null });
   const { toast } = useToast();
   
   const optedMatches = mockMatches.filter(match => match.optedIn);
@@ -361,12 +366,14 @@ export function Dashboard() {
   };
 
   const handleHistoryClick = (matchId: number) => {
-    const match = mockMatches.find(m => m.id === matchId);
-    toast({
-      title: "Match History",
-      description: `Viewing history for ${match?.playerA} vs ${match?.playerB}`,
-    });
+    setHistoryModal({ isOpen: true, matchId });
   };
+
+  const closeHistoryModal = () => {
+    setHistoryModal({ isOpen: false, matchId: null });
+  };
+
+  const selectedMatch = historyModal.matchId ? mockMatches.find(m => m.id === historyModal.matchId) : null;
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
@@ -505,6 +512,17 @@ export function Dashboard() {
           </div>
         </section>
       </main>
+
+      {/* Match History Modal */}
+      {selectedMatch && (
+        <MatchHistoryModal
+          isOpen={historyModal.isOpen}
+          onClose={closeHistoryModal}
+          playerName={selectedMatch.playerA}
+          opponentName={selectedMatch.playerB}
+          sport={selectedMatch.sport}
+        />
+      )}
     </div>
   );
 }
