@@ -22,7 +22,23 @@ const mockMatches: Match[] = [
     optedIn: true,
     sport: 'Tennis',
     startTime: '14:30',
-    winProbability: 75
+    winProbability: 75,
+    teamAHistory: {
+      recentWins: 8,
+      recentLosses: 2,
+      headToHeadWins: 12,
+      headToHeadLosses: 8,
+      averageScore: 6.2,
+      lastMatchResult: 'win'
+    },
+    teamBHistory: {
+      recentWins: 6,
+      recentLosses: 4,
+      headToHeadWins: 8,
+      headToHeadLosses: 12,
+      averageScore: 5.8,
+      lastMatchResult: 'loss'
+    }
   },
   {
     id: 2,
@@ -37,7 +53,23 @@ const mockMatches: Match[] = [
     optedIn: true,
     sport: 'Basketball',
     startTime: '19:00',
-    winProbability: 65
+    winProbability: 65,
+    teamAHistory: {
+      recentWins: 7,
+      recentLosses: 3,
+      headToHeadWins: 15,
+      headToHeadLosses: 12,
+      averageScore: 112.5,
+      lastMatchResult: 'win'
+    },
+    teamBHistory: {
+      recentWins: 9,
+      recentLosses: 1,
+      headToHeadWins: 12,
+      headToHeadLosses: 15,
+      averageScore: 118.2,
+      lastMatchResult: 'win'
+    }
   },
   {
     id: 3,
@@ -52,7 +84,23 @@ const mockMatches: Match[] = [
     optedIn: true,
     sport: 'Football',
     startTime: '16:45',
-    winProbability: 80
+    winProbability: 80,
+    teamAHistory: {
+      recentWins: 8,
+      recentLosses: 2,
+      headToHeadWins: 18,
+      headToHeadLosses: 8,
+      averageScore: 2.1,
+      lastMatchResult: 'win'
+    },
+    teamBHistory: {
+      recentWins: 6,
+      recentLosses: 4,
+      headToHeadWins: 8,
+      headToHeadLosses: 18,
+      averageScore: 1.8,
+      lastMatchResult: 'loss'
+    }
   },
   {
     id: 4,
@@ -67,7 +115,23 @@ const mockMatches: Match[] = [
     optedIn: true,
     sport: 'F1',
     startTime: '15:00',
-    winProbability: 45
+    winProbability: 45,
+    teamAHistory: {
+      recentWins: 4,
+      recentLosses: 6,
+      headToHeadWins: 20,
+      headToHeadLosses: 25,
+      averageScore: 8.2,
+      lastMatchResult: 'loss'
+    },
+    teamBHistory: {
+      recentWins: 8,
+      recentLosses: 2,
+      headToHeadWins: 25,
+      headToHeadLosses: 20,
+      averageScore: 9.1,
+      lastMatchResult: 'win'
+    }
   },
   {
     id: 5,
@@ -82,7 +146,23 @@ const mockMatches: Match[] = [
     optedIn: true,
     sport: 'Basketball',
     startTime: '20:30',
-    winProbability: 70
+    winProbability: 70,
+    teamAHistory: {
+      recentWins: 9,
+      recentLosses: 1,
+      headToHeadWins: 22,
+      headToHeadLosses: 18,
+      averageScore: 28.5,
+      lastMatchResult: 'win'
+    },
+    teamBHistory: {
+      recentWins: 7,
+      recentLosses: 3,
+      headToHeadWins: 18,
+      headToHeadLosses: 22,
+      averageScore: 26.8,
+      lastMatchResult: 'win'
+    }
   },
   // Available matches (not opted in)
   {
@@ -97,7 +177,23 @@ const mockMatches: Match[] = [
     optedIn: false,
     sport: 'Tennis',
     startTime: '13:15',
-    winProbability: 60
+    winProbability: 60,
+    teamAHistory: {
+      recentWins: 6,
+      recentLosses: 4,
+      headToHeadWins: 24,
+      headToHeadLosses: 7,
+      averageScore: 6.4,
+      lastMatchResult: 'win'
+    },
+    teamBHistory: {
+      recentWins: 5,
+      recentLosses: 5,
+      headToHeadWins: 7,
+      headToHeadLosses: 24,
+      averageScore: 5.1,
+      lastMatchResult: 'loss'
+    }
   },
   {
     id: 7,
@@ -111,7 +207,23 @@ const mockMatches: Match[] = [
     optedIn: false,
     sport: 'Football',
     startTime: '21:00',
-    winProbability: 85
+    winProbability: 85,
+    teamAHistory: {
+      recentWins: 9,
+      recentLosses: 1,
+      headToHeadWins: 98,
+      headToHeadLosses: 96,
+      averageScore: 2.3,
+      lastMatchResult: 'win'
+    },
+    teamBHistory: {
+      recentWins: 8,
+      recentLosses: 2,
+      headToHeadWins: 96,
+      headToHeadLosses: 98,
+      averageScore: 2.1,
+      lastMatchResult: 'draw'
+    }
   },
   {
     id: 8,
@@ -125,7 +237,23 @@ const mockMatches: Match[] = [
     optedIn: false,
     sport: 'Basketball',
     startTime: '18:30',
-    winProbability: 25
+    winProbability: 25,
+    teamAHistory: {
+      recentWins: 3,
+      recentLosses: 7,
+      headToHeadWins: 8,
+      headToHeadLosses: 12,
+      averageScore: 105.2,
+      lastMatchResult: 'loss'
+    },
+    teamBHistory: {
+      recentWins: 6,
+      recentLosses: 4,
+      headToHeadWins: 12,
+      headToHeadLosses: 8,
+      averageScore: 109.8,
+      lastMatchResult: 'win'
+    }
   },
   {
     id: 9,
@@ -139,7 +267,23 @@ const mockMatches: Match[] = [
     optedIn: false,
     sport: 'F1',
     startTime: '14:00',
-    winProbability: 75
+    winProbability: 75,
+    teamAHistory: {
+      recentWins: 5,
+      recentLosses: 5,
+      headToHeadWins: 8,
+      headToHeadLosses: 6,
+      averageScore: 7.8,
+      lastMatchResult: 'win'
+    },
+    teamBHistory: {
+      recentWins: 7,
+      recentLosses: 3,
+      headToHeadWins: 6,
+      headToHeadLosses: 8,
+      averageScore: 8.2,
+      lastMatchResult: 'win'
+    }
   },
   {
     id: 10,
@@ -153,7 +297,23 @@ const mockMatches: Match[] = [
     optedIn: false,
     sport: 'Tennis',
     startTime: '17:30',
-    winProbability: 40
+    winProbability: 40,
+    teamAHistory: {
+      recentWins: 4,
+      recentLosses: 6,
+      headToHeadWins: 3,
+      headToHeadLosses: 7,
+      averageScore: 5.9,
+      lastMatchResult: 'loss'
+    },
+    teamBHistory: {
+      recentWins: 3,
+      recentLosses: 7,
+      headToHeadWins: 7,
+      headToHeadLosses: 3,
+      averageScore: 6.1,
+      lastMatchResult: 'loss'
+    }
   }
 ];
 

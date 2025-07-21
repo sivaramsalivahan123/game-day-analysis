@@ -5,6 +5,24 @@ import { TrendingUp, TrendingDown, Cloud, Sun, CloudRain, Users, DollarSign, Clo
 import { analyzeMatch } from "@/lib/ai-analysis";
 import { useState, useEffect } from "react";
 
+interface TeamHistory {
+  recentWins: number;
+  recentLosses: number;
+  headToHeadWins: number;
+  headToHeadLosses: number;
+  averageScore: number;
+  lastMatchResult: 'win' | 'loss' | 'draw';
+}
+
+interface SocialSentiment {
+  positive: number;
+  negative: number;
+  neutral: number;
+  overallScore: number;
+  totalMentions: number;
+  trending: boolean;
+}
+
 export interface Match {
   id: number;
   playerA: string;
@@ -19,6 +37,12 @@ export interface Match {
   sport: string;
   startTime: string;
   winProbability?: number;
+  teamAHistory?: TeamHistory;
+  teamBHistory?: TeamHistory;
+  socialSentiment?: {
+    teamA: SocialSentiment;
+    teamB: SocialSentiment;
+  };
 }
 
 interface MatchCardProps {
