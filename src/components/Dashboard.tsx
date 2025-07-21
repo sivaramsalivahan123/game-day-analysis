@@ -6,6 +6,7 @@ import { MatchCard, type Match } from "./MatchCard";
 import { BarChart3, TrendingUp, DollarSign, Target, Users, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { analyzeMatch } from "@/lib/ai-analysis";
+import betmgmLogo from "@/assets/betmgm-logo.png";
 
 const mockMatches: Match[] = [
   {
@@ -200,7 +201,16 @@ export function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* BETMGM Logo Background */}
+      <div 
+        className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-5 pointer-events-none"
+        style={{
+          backgroundImage: `url(${betmgmLogo})`,
+          backgroundSize: '40%',
+          backgroundPosition: 'center center'
+        }}
+      />
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
